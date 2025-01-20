@@ -7,7 +7,7 @@ const ClassSchema = new Schema({
         required: true
     },
     paralelo: {
-        type: String,
+        type: Number,
         required: true
     },
     asignatura: {
@@ -15,7 +15,7 @@ const ClassSchema = new Schema({
         required: true
     },
     cupos: {
-        type: String,
+        type: Number,
         required: true
     },
     docente: { 
