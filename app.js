@@ -4,6 +4,7 @@ const cors = require('cors')
 const dotenv = require('dotenv').config();
 const createError = require('http-errors');
 const app = express();
+const router = require('./Routes/App.route');
 
 app.use(cors());
 app.use(express.json());
@@ -16,6 +17,9 @@ mongoose.connect(process.env.MONGODB_URI, {
 }).then(() => {
     console.log('MongoDB HAS CONNECTED....');
 });
+
+app.use('/v0', router);
+
 
 app.use((req, res, next) =>{
     next(createError(404, "Not Found"));
