@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const createError = require('http-errors');
-const Horario = require('../Models/Horario.model');
+const Class = require('../Models/Class.model');
 
 module.exports = {
-    getHorarios: async(req, res, next) => {
+    getClasses: async(req, res, next) => {
         try
         {
-            const results = await Horario.find({}, {__v:0});
+            const results = await Class.find({}, {__v:0});
             res.send(results);
         } catch(error)
         {
